@@ -1,10 +1,8 @@
 <script setup>
-import HelloWorld from '@/components/HelloWorld.vue';
+import home from '@/components/Home.vue'; 
 
 </script>
 
 <template>
-  <main>
-    <HelloWorld msg="Olá!" />
-  </main>
+  <home />
 </template>
