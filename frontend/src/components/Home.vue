@@ -30,7 +30,9 @@
       </div>
 
       <div class="my-4">
-        <button class="btn btn-primary">Adicionar Novo Produto</button>
+        <router-link to="/Register-Product">
+          <button class="btn btn-primary" >Adicionar Novo Produto</button>
+        </router-link>
       </div>
 
       <div class="row">
@@ -38,8 +40,12 @@
           <div class="card">
             <img src="../assets/roupa_projeto.jpg" class="card-img-top" alt="Produto 1">
             <div class="card-body">
-              <h5 class="card-title">Produto 1</h5>
-              <p class="card-text">R$ 50,00</p>
+              <h5 class="card-title">
+                <i class="fas fa-tag"></i> Produto 1
+              </h5>
+              <p class="card-text">
+                <i class="fas fa-dollar-sign"></i> R$ 50,00
+              </p>
               <p class="card-text">10 unidades em estoque</p>
               <button class="btn btn-warning">Editar</button>
             </div>
@@ -49,8 +55,12 @@
           <div class="card">
             <img src="../assets/roupa_projeto.jpg" class="card-img-top" alt="Produto 2">
             <div class="card-body">
-              <h5 class="card-title">Produto 2</h5>
-              <p class="card-text">R$ 80,00</p>
+              <h5 class="card-title">
+                <i class="fas fa-tag"></i> Produto 2
+              </h5>
+              <p class="card-text">
+                <i class="fas fa-dollar-sign"></i> R$ 80,00
+              </p>
               <p class="card-text">5 unidades em estoque</p>
               <button class="btn btn-warning">Editar</button>
             </div>

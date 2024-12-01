@@ -12,6 +12,14 @@ const router = createRouter({
         title: 'Home'
       }
     },
+    {
+      path: '/Register-Product',
+      name: 'register-product',
+      component :() => import('@/components/RegisterProducts.vue'),
+      meta: {
+        title: 'Cadastrar Produto'
+      }
+    },
   ]
 })
 
