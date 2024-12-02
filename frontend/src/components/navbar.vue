@@ -11,7 +11,7 @@
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="/">Home</a>
                         </li>
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a class="nav-link" href="#">Produtos</a>
                         </li>
                         <li class="nav-item">
@@ -19,9 +19,9 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Fornecedores</a>
-                        </li>
+                        </li> -->
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Relatórios</a>
+                            <a class="nav-link" href="/estatisticas">Relatórios</a>
                         </li>
                     </ul>
                 </div>
