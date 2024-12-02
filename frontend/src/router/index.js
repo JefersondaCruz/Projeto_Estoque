@@ -20,6 +20,14 @@ const router = createRouter({
         title: 'Cadastrar Produto'
       }
     },
+    {
+      path: '/estatisticas',
+      name: 'estatisticas',
+      component :() => import('@/components/Statistics.vue'),
+      meta: {
+        title: 'Estatísticas'
+      }
+    },
   ]
 })
 
