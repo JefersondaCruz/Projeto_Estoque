@@ -1,10 +1,21 @@
 <template>
-<div class="login-page">
-    <div class="login-card">
-    <h2 class="login-title">Bem-vindo!</h2>
-    <p class="login-subtitle">Entre para acessar sua conta</p>
+<div class="register-page">
+    <div class="register-card">
+    <h2 class="register-title">Crie sua conta</h2>
+    <p class="register-subtitle">Preencha os campos abaixo para se registrar</p>
     
-    <form @submit.prevent="handleLogin">
+    <form @submit.prevent="handleRegister">
+        <div class="form-group">
+        <label for="name">Nome</label>
+        <input
+            type="text"
+            id="name"
+            v-model="form.name"
+            placeholder="Digite seu nome completo"
+            class="form-control"
+            required
+        />
+        </div>
         <div class="form-group">
         <label for="email">E-mail</label>
         <input
@@ -27,11 +38,22 @@
             required
         />
         </div>
-        <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+        <div class="form-group">
+        <label for="confirmPassword">Confirmar Senha</label>
+        <input
+            type="password"
+            id="confirmPassword"
+            v-model="form.confirmPassword"
+            placeholder="Confirme sua senha"
+            class="form-control"
+            required
+        />
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Registrar</button>
     </form>
 
-    <p class="signup-link">
-        Não tem uma conta? <a href="/register">Cadastre-se</a>
+    <p class="login-link">
+        Já tem uma conta? <a href="/">Entre aqui</a>
     </p>
     </div>
 </div>
@@ -42,24 +64,38 @@ export default {
 data() {
     return {
     form: {
+        name: "",
         email: "",
         password: "",
+        confirmPassword: "",
     },
     };
 },
 methods: {
-    handleLogin() {
-    if (this.form.email === "admin@example.com" && this.form.password === "password") {
-        alert("Login bem-sucedido!");
-    } else {
-        alert("E-mail ou senha inválidos.");
+    handleRegister() {
+    if (this.form.password !== this.form.confirmPassword) {
+        alert("As senhas não correspondem.");
+        return;
     }
+
+
+    const userData = {
+        name: this.form.name,
+        email: this.form.email,
+        password: this.form.password,
+    };
+
+    console.log("Dados enviados para registro:", userData);
+
+    alert("Registro realizado com sucesso!");
     },
 },
 };
 </script>
+
 <style scoped>
-.login-page {
+
+.register-page {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -67,22 +103,22 @@ methods: {
     background-color: #f8f9fa;
 }
 
-.login-card {
+.register-card {
     background: #ffffff;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    width: 350px;
+    width: 400px;
 }
 
-.login-title {
+.register-title {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 10px;
 }
 
-.login-subtitle {
+.register-subtitle {
     font-size: 14px;
     color: #6c757d;
     margin-bottom: 20px;
@@ -130,17 +166,17 @@ methods: {
     background-color: #0056b3;
 }
 
-.signup-link {
+.login-link {
     margin-top: 15px;
     font-size: 14px;
 }
 
-.signup-link a {
+.login-link a {
     color: #007bff;
     text-decoration: none;
 }
 
-.signup-link a:hover {
-    text-decoration: underline; 
+.login-link a:hover {
+    text-decoration: underline;
 }
 </style>

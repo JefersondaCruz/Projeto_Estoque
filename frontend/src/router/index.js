@@ -6,6 +6,14 @@ const router = createRouter({
   routes: [
     {
       path: '/',
+      name: 'login',
+      component:() => import('@/components/Login.vue'),
+      meta: {
+        title: 'logar'
+      }
+    },
+    {
+      path: '/home',
       name: 'home',
       component: HomeView,
       meta: {
@@ -28,6 +36,14 @@ const router = createRouter({
         title: 'Estatísticas'
       }
     },
+    {
+      path: '/register',
+      name: 'register',
+      component :() => import('@/components/Register.vue'),
+      meta: {
+        title: 'Registrar'
+      }
+    }
   ]
 })
 
