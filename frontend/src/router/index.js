@@ -6,6 +6,14 @@ const router = createRouter({
   routes: [
     {
       path: '/',
+      name: 'login',
+      component:() => import('@/components/Login.vue'),
+      meta: {
+        title: 'logar'
+      }
+    },
+    {
+      path: '/home',
       name: 'home',
       component: HomeView,
       meta: {
@@ -13,8 +21,8 @@ const router = createRouter({
       }
     },
     {
-      path: '/Register-Product',
-      name: 'register-product',
+      path: '/Register-House',
+      name: 'register-House',
       component :() => import('@/components/RegisterProducts.vue'),
       meta: {
         title: 'Cadastrar Produto'
@@ -28,6 +36,14 @@ const router = createRouter({
         title: 'Estatísticas'
       }
     },
+    {
+      path: '/register',
+      name: 'register',
+      component :() => import('@/components/Register.vue'),
+      meta: {
+        title: 'Registrar'
+      }
+    }
   ]
 })
 
@@ -37,3 +53,4 @@ router.beforeEach((to, from, next) => {
 });
 
 export default router
+
