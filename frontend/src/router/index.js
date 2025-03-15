@@ -21,8 +21,8 @@ const router = createRouter({
       }
     },
     {
-      path: '/Register-Product',
-      name: 'register-product',
+      path: '/Register-House',
+      name: 'register-House',
       component :() => import('@/components/RegisterProducts.vue'),
       meta: {
         title: 'Cadastrar Produto'
@@ -53,3 +53,4 @@ router.beforeEach((to, from, next) => {
 });
 
 export default router
+
